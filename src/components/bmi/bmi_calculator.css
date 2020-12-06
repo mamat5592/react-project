@@ -1,0 +1,155 @@
+.container{
+    position: relative;
+}
+
+.bmi{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    max-height: 100vh;
+    max-width: 100vw;
+    background-color: #A8DADC;
+}
+
+svg{
+    z-index: 2;
+}
+
+.description{
+    background-color: #A8DADC;
+    width: 100%;
+    max-width: 100vw;
+    height: 70vh;
+    position: relative;
+}
+
+.description_items{
+    position: relative;
+    height: 7vh;
+}
+
+.description_items p{
+    margin: 0;
+    display: inline;
+    position: absolute;
+    font-size: medium;
+    color:#1D3557;
+    width: max-content;
+    left: 25vw;
+    top: 5%;
+}
+
+.description_items svg{
+    background-color: #A8DADC;
+    width: 60%;
+    position: absolute;
+    right: 20vw;
+    transition: right 2s;
+}
+
+#sel01 {
+    fill: white;
+}
+
+#sel02 {
+    fill: green;
+}
+
+#sel03 {
+    fill: yellow;
+}
+
+#sel04 {
+    fill: orange;
+}
+
+#sel05 {
+    fill: red;
+}
+
+#sel06 {
+    fill: black;
+}
+
+.description_items:hover > svg{
+    right: 80%;
+}
+
+.bmi_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 70%;
+}
+
+.f_container{
+    height: fit-content;
+    max-height: fit-content;
+    width: 100%;
+    margin: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+}
+
+.s_container{
+    height: fit-content;
+    margin: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+}
+
+.text_inputs{
+    text-align: center;
+    font-size: large;
+    min-width: 30vh;
+    min-height: 6vh;
+    border: 1px solid white;
+    border-radius: 30px;
+    box-shadow: 0 10px 16px 0 #4d7a7c,0 6px 20px 0#94b3b4;
+}
+
+i{
+    position: absolute;
+}
+
+.text_inputs:focus{
+    outline: none;
+    border-radius: 30px;
+}
+
+.range_inputs{
+    min-width: 24vh;
+    position: absolute;
+    z-index: 2;
+    top: 55%;
+    padding-top: 3vh;
+}
+
+.reset_input{
+    margin-top: 2vh;
+    border: none;
+    background-color: #E63946;
+    color: white;
+    padding: 2vh 4vh 2vh 4vh;
+    box-shadow: 0 10px 16px 0 #4d7a7c;
+}
+
+.reset_input:hover{
+    background-color: #e66671;
+}
+
+.reset_input:focus{
+    outline: none;
+}
+
+.reset_input:active{
+    box-shadow: none;
+    transform: scale(0.9,0.9);
+}
+

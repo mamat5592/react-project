@@ -1,0 +1,178 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #F1FAEE;
+  height:inherit ;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App-logo {
+  width: 65px;
+  height: 65px;
+  position: fixed;
+  z-index: 5;
+  top: 15px;
+  right: 0;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#menu {
+  z-index: 5;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  top:30px;
+  left: 15px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: medium;
+}
+
+.menu-button {
+  opacity: 0;
+  z-index: -1;
+}
+
+.menu-button {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  margin: 0;
+  border-radius: 50px;
+  background: #424242;
+}
+
+.menu-button:before,
+.menu-button:after{
+background:#fff;
+width:20px;
+height:2px;
+left:10px;
+display:block;
+position:absolute;
+content:"";
+transition:all .75s ease
+}
+
+.menu-button:before{top:16px}
+.menu-button:after{bottom:16px}
+
+#menu:not(:target)>a:first-of-type,
+#menu:target>a:last-of-type {
+  opacity: 1;
+  z-index: 5;
+}
+
+.menu-item {
+  text-align:center;
+  width: 200px;
+  height: 40px;
+  position: absolute;
+  line-height: 15px;
+  margin:0;
+  border-radius: 50px;
+  background-color: #424242;
+  visibility:hidden;
+  opacity: 0;
+  transform: translate(0px, 0px);
+  transition-property: transform opacity visibility;
+  transition-duration: 500ms;
+  z-index: 5;
+  transition: .5s;
+}
+
+.menu-item:hover{
+opacity: 0.5;
+box-shadow: 0 5px 10px black; 
+}
+
+.menu-item a {
+  color: #fff;
+  position: relative;
+  top: 30%;
+  left: 0;
+  text-decoration: none;
+}
+
+#menu:target .menu-button:before{transform:rotate(45deg) translate(2px,2px)}
+#menu:target .menu-button:after{transform:rotate(-45deg) translate(2px,-2px)}
+
+#menu:target>.menu-item:nth-child(3) {
+  visibility:visible;
+  opacity: 1;
+  transform: translate(50px);
+  transition-delay: 0s;
+}
+
+#menu:target>.menu-item:nth-child(4) {
+  visibility:visible;
+  opacity: 1;
+  transform: translate(50px,50px);
+  transition-delay: 0s;
+}
+
+#menu:target>.menu-item:nth-child(5) {
+  visibility:visible;
+  opacity: 1;
+  transform: translate(50px,100px);
+  transition-delay: 0s;
+}
+
+#menu:target>.menu-item:nth-child(6) {
+  visibility:visible;
+  opacity: 1;
+  transform: translate(50px,150px);
+  transition-delay: 0s;
+}
+
+#menu:target>.menu-item:nth-child(7) {
+  visibility:visible;
+  opacity: 1;
+  transform: translate(50px,200px);
+  transition-delay: 0s;
+}
+
+#menu:target>.menu-item:nth-child(8) {
+  visibility:visible;
+  opacity: 1;
+  transform: translate(50px,250px);
+  transition-delay: 0s;
+}
+
+#menu:target>.menu-item:nth-child(9) {
+  visibility:visible;
+  opacity: 1;
+  transform: translate(50px,300px);
+  transition-delay: 0s;
+}
+
+#menu:target>.menu-item:nth-child(10) {
+  visibility:visible;
+  opacity: 1;
+  transform: translate(50px,350px);
+  transition-delay: 0s;
+}
