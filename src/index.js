@@ -22,8 +22,6 @@ function App() {
             
                 <img src={logo} className="App-logo" alt="logo" />
                 
-
-
                 <ul id="menu">
                     <a className="menu-button icon-plus" href="#menu" > </a>
                     <a className="menu-button icon-minus" href="#0" > </a>

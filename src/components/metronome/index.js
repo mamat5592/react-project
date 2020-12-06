@@ -22,6 +22,10 @@ class MetronomeComponent extends React.Component{
         }
     }
 
+    componentWillUnmount(){
+        clearInterval(this.intervalID);
+    }
+
     render(){
 
         var _range_ref;
