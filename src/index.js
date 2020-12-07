@@ -15,6 +15,7 @@ import BMIComponent from './components/bmi/bmi_calculator';
 import BGComponent from './components/background/index';
 import SNComponent from './components/social network/components_container';
 import MetronomeComponent from './components/metronome/index';
+import BCComponent from './components/base converter/index';
 
 function App() {
     return (
@@ -61,9 +62,9 @@ function App() {
                         </a>
                     </li>
                     <li className="menu-item">
-                        <a href="#menu">
-                            ___
-                        </a>
+                        <Link to='/base_converter'>
+                            Base Converter
+                        </Link>
                     </li>
                 </ul>
 
@@ -90,8 +91,8 @@ function App() {
                 <Route path = '/background'>
                     <BGComponent />
                 </Route>
-                <Route path = '/bmi'>
-                    <BMIComponent />
+                <Route path = '/base_converter'>
+                    <BCComponent />
                 </Route>
             </Switch>
         </Router>
