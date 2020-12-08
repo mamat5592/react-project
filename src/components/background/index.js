@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './style.css';
 
-function BGComponent(props){
+function BGComponent(){
 
   const [bg_color,bg_color_set] = useState('#838bfc');
   var _input_ref;

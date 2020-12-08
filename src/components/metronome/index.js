@@ -3,7 +3,7 @@ import React from 'react';
 import './style.css';
 import sound from './heartbeat.mp3';
 
-class MetronomeComponent extends React.Component{
+class MComponent extends React.Component{
     constructor(props){
         super(props)
         this.state = {
@@ -74,4 +74,4 @@ class MetronomeComponent extends React.Component{
     }
 }
 
-export default MetronomeComponent;
+export default MComponent;

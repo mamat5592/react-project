@@ -1,6 +1,6 @@
 import './index.css';
 
-function HomeComponent(){
+function HComponent(){
     return(
         <div id='asli'>
             <p>hi</p>
@@ -8,4 +8,4 @@ function HomeComponent(){
     );
 }
 
-export default HomeComponent;
+export default HComponent;

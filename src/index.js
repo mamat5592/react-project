@@ -4,97 +4,97 @@ import {
     BrowserRouter as Router,
     Switch,
     Link,
-    Route
+    Route,
 } from 'react-router-dom';
 
 import './index.css';
 import logo from './logo.svg';
 
-import HomeComponent from './components/home/index';
+import HComponent from './components/home/index';
 import BMIComponent from './components/bmi/bmi_calculator';
 import BGComponent from './components/background/index';
 import SNComponent from './components/social network/components_container';
-import MetronomeComponent from './components/metronome/index';
+import MComponent from './components/metronome/index';
 import BCComponent from './components/base converter/index';
 
 function App() {
     return (
         <Router>
-            
-                <img src={logo} className="App-logo" alt="logo" />
-                
-                <ul id="menu">
-                    <a className="menu-button icon-plus" href="#menu" > </a>
-                    <a className="menu-button icon-minus" href="#0" > </a>
-                    <li className="menu-item">
-                        <Link to='/'>
-                            Home
-                        </Link>
-                    </li>
-                    <li className="menu-item">
-                        <Link to='/bmi'>
-                            BMI Calculator
-                        </Link>
-                    </li>
-                    <li className="menu-item">
-                        <Link to='/background'>
-                            Background
-                        </Link>
-                    </li>
-                    <li className="menu-item">
-                        <a href="#menu">
-                            ___
-                        </a>
-                    </li>
-                    <li className="menu-item">
-                        <Link to='/social_network'>
-                            Social Network
-                        </Link>
-                    </li>
-                    <li className="menu-item">
-                        <Link to='/metronome'>
-                            Metronome
-                        </Link>
-                    </li>
-                    <li className="menu-item">
-                        <a href="#menu">
-                            ___
-                        </a>
-                    </li>
-                    <li className="menu-item">
-                        <Link to='/base_converter'>
-                            Base Converter
-                        </Link>
-                    </li>
-                </ul>
+            <img src={logo} className="App-logo" alt="logo" />
+
+            <ul id="menu">
+                <a className="menu-button icon-plus" href="#menu" > </a>
+                <a className="menu-button icon-minus" href="#0" > </a>
+                <li className="menu-item">
+                    <Link to='/react-project/'>
+                        Home
+                    </Link>
+                </li>
+                <li className="menu-item">
+                    <Link to='/react-project/bmi'>
+                        BMI Calculator
+                    </Link>
+                </li>
+                <li className="menu-item">
+                    <Link to='/react-project/background'>
+                        Background
+                    </Link>
+                </li>
+                <li className="menu-item">
+                    <a href="#menu">
+                           ___
+                    </a>
+                </li>
+                <li className="menu-item">
+                    <Link to='/react-project/social_network'>
+                        Social Network
+                    </Link>
+                </li>
+                <li className="menu-item">
+                    <Link to='/react-project/metronome'>
+                        Metronome
+                    </Link>
+                </li>
+                <li className="menu-item">
+                    <a href="#menu">
+                        ___
+                    </a>
+                </li>
+                <li className="menu-item">
+                    <Link to='/react-project/base_converter'>
+                        Base Converter
+                    </Link>
+                </li>
+            </ul>
 
 
             <Switch>
-                <Route exact path = '/'>
-                    <HomeComponent />
+                <Route exact path = '/react-project/'>
+                    <HComponent />
                 </Route>
-                <Route path = '/bmi'>
+                <Route path = '/react-project/bmi'>
                     <BMIComponent />
                 </Route>
-                <Route path = '/background'>
+                <Route path = '/react-project/background'>
                     <BGComponent />
                 </Route>
-                <Route path = '/background'>
+                <Route path = '/react-project/background'>
                     <BGComponent />
                 </Route>
-                <Route path = '/social_network'>
+                <Route path = '/react-project/social_network'>
                     <SNComponent />
                 </Route>
-                <Route path = '/metronome'>
-                    <MetronomeComponent />
+                <Route path = '/react-project/metronome'>
+                    <MComponent />
                 </Route>
-                <Route path = '/background'>
+                <Route path = '/react-project/background'>
                     <BGComponent />
                 </Route>
-                <Route path = '/base_converter'>
+                <Route path = '/react-project/base_converter'>
                     <BCComponent />
                 </Route>
             </Switch>
+
         </Router>
     );
 }
