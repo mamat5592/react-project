@@ -3,7 +3,7 @@ import {convertBase} from 'simple-base-converter';
 
 import './index.css';
 
-class BCComponent extends React.Component{
+class BComponent extends React.Component{
     constructor(){
         super();
 
@@ -114,4 +114,4 @@ class BCComponent extends React.Component{
 
 
 
-export default BCComponent;
+export default BComponent;

@@ -1,0 +1,97 @@
+#all_con input{
+    font-family: Vazir, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif !important;
+    text-align: center;
+}
+
+#all_con p{
+    font-family: Vazir, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif !important;
+    margin: auto;
+}
+
+#card_image_con{
+    position: relative;
+    margin: 50% auto 10%;
+    width: 300px;
+    max-width: 300px;
+    height: 200px;
+    max-height: 200px;
+}
+
+#card_info_con{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 300px;
+}
+
+#card_info{
+    position: relative;
+}
+
+.all_chn{
+    z-index: 2;
+    position: absolute;
+}
+
+#card_info img{
+    width: 300px;
+    max-width: 300px;
+    height: 200px;
+    max-height: 200px;
+    box-shadow: 0px 0px 20px 0 #DDDDDD;
+}
+
+#card_number{
+    width: 100%;
+    padding: 5px 0;
+    margin: 5px;
+    border: 0;
+    box-shadow: 0px 0px 20px 0 #DDDDDD;
+}
+
+#owner_name{
+    width: 100%;
+    padding: 5px 0;
+    margin: 5px;
+    border: 0;
+    box-shadow: 0px 0px 20px 0 #DDDDDD;
+}
+
+#mini_con{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+#cvv2{
+    flex: 2;
+    width: 20%;
+    padding: 5px 0;
+    margin: 5px;
+    border: 0;
+    box-shadow: 0px 0px 20px 0 #DDDDDD;
+}
+
+#month{
+    flex: 2;
+    width: 20%;
+    padding: 5px 0;
+    margin: 5px;
+    border: 0;
+    box-shadow: 0px 0px 20px 0 #DDDDDD;
+}
+
+#year{
+    flex: 2;
+    width: 20%;
+    padding: 5px 0;
+    margin: 5px;
+    border: 0;
+    box-shadow: 0px 0px 20px 0 #DDDDDD;
+}

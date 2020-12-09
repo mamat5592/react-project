@@ -16,7 +16,7 @@ class MComponent extends React.Component{
         this.pauseAudio = this.pauseAudio.bind(this);
     }
 
-    componentDidUpdate(prevProps,prevState) {
+    componentDidUpdate(prevState) {
         if(this.state.beat !== prevState.beat){
             clearInterval(this.intervalID);
         }

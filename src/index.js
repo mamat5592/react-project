@@ -15,7 +15,8 @@ import BMIComponent from './components/bmi/bmi_calculator';
 import BGComponent from './components/background/index';
 import SNComponent from './components/social network/components_container';
 import MComponent from './components/metronome/index';
-import BCComponent from './components/base converter/index';
+import BCComponent from './components/bank card/index';
+import BComponent from './components/base converter/index';
 
 function App() {
     return (
@@ -46,7 +47,7 @@ function App() {
                     </a>
                 </li>
                 <li className="menu-item">
-                    <Link to='/react-project/social_network'>
+                    <Link to='/react-project/social-network'>
                         Social Network
                     </Link>
                 </li>
@@ -56,12 +57,12 @@ function App() {
                     </Link>
                 </li>
                 <li className="menu-item">
-                    <a href="#menu">
-                        ___
-                    </a>
+                    <Link to='/react-project/bank-card'>
+                        Bank Card
+                    </Link>
                 </li>
                 <li className="menu-item">
-                    <Link to='/react-project/base_converter'>
+                    <Link to='/react-project/base-converter'>
                         Base Converter
                     </Link>
                 </li>
@@ -81,17 +82,17 @@ function App() {
                 <Route path = '/react-project/background'>
                     <BGComponent />
                 </Route>
-                <Route path = '/react-project/social_network'>
+                <Route path = '/react-project/social-network'>
                     <SNComponent />
                 </Route>
                 <Route path = '/react-project/metronome'>
                     <MComponent />
                 </Route>
-                <Route path = '/react-project/background'>
-                    <BGComponent />
-                </Route>
-                <Route path = '/react-project/base_converter'>
+                <Route path = '/react-project/bank-card'>
                     <BCComponent />
+                </Route>
+                <Route path = '/react-project/base-converter'>
+                    <BComponent />
                 </Route>
             </Switch>
 
