@@ -107,12 +107,6 @@ export default class BCComponent extends React.Component{
 
         let source;
 
-        let card_number_style = {left:'80px',top:'90px'};
-        let owner_name_style = {left:'150px',top:'110px'};
-        let cvv2_style = {left:'50px',top:'150px'};
-        let month_style = {left:'95px',top:'110px'};
-        let year_style = {left:'50px',top:'110px'};
-
         let card_number = b.value;
         let owner_name = c.value;
         let cvv2 = d.value;

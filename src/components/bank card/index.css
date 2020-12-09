@@ -14,7 +14,7 @@
 
 #card_image_con{
     position: relative;
-    margin: 50% auto 10%;
+    margin: 30% auto 10%;
     width: 300px;
     max-width: 300px;
     height: 200px;
@@ -36,6 +36,31 @@
 .all_chn{
     z-index: 2;
     position: absolute;
+}
+
+#overlay_card_number{
+    left:'80px';
+    top:'90px'
+}
+
+#overlay_owner_name{
+    left:'150px';
+    top:'110px'
+}
+
+#overlay_cvv2{
+    left:'50px';
+    top:'150px'
+}
+
+#overlay_month{
+    left:'95px';
+    top:'110px'
+}
+
+#overlay_year{
+    left:'50px';
+    top:'110px'
 }
 
 #card_info img{
