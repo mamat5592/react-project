@@ -139,11 +139,11 @@ export default class BCComponent extends React.Component{
             return (
                 <div id='card_info'>
                     <img id='card_image' className='all_chn' src={source} alt='not loaded'/>
-                    <p id='overlay_card_number' className='all_chn' style={card_number_style} >{card_number}</p>
-                    <p id='overlay_owner_name' className='all_chn' style={owner_name_style} >{owner_name}</p>
-                    <p id='overlay_cvv2' className='all_chn' style={cvv2_style} >cvv2 : {cvv2}</p>
-                    <p id='overlay_month' className='all_chn' style={month_style} >{month}</p>
-                    <p id='overlay_year' className='all_chn' style={year_style} >14{year}/</p>
+                    <p id='overlay_card_number' className='all_chn' >{card_number}</p>
+                    <p id='overlay_owner_name' className='all_chn' >{owner_name}</p>
+                    <p id='overlay_cvv2' className='all_chn' >cvv2 : {cvv2}</p>
+                    <p id='overlay_month' className='all_chn' >{month}</p>
+                    <p id='overlay_year' className='all_chn' >14{year}/</p>
                 </div>
             );
         }

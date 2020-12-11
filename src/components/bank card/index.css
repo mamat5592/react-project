@@ -39,28 +39,28 @@
 }
 
 #overlay_card_number{
-    left:'80px';
-    top:'90px'
+    left:80px;
+    top:90px
 }
 
 #overlay_owner_name{
-    left:'150px';
-    top:'110px'
+    left:150px;
+    top:110px
 }
 
 #overlay_cvv2{
-    left:'50px';
-    top:'150px'
+    left:50px;
+    top:150px
 }
 
 #overlay_month{
-    left:'95px';
-    top:'110px'
+    left:95px;
+    top:110px
 }
 
 #overlay_year{
-    left:'50px';
-    top:'110px'
+    left:50px;
+    top:110px
 }
 
 #card_info img{

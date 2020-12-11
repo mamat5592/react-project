@@ -13,6 +13,7 @@ import logo from './logo.svg';
 import HComponent from './components/home/index';
 import BMIComponent from './components/bmi/bmi_calculator';
 import BGComponent from './components/background/index';
+import WComponent from './components/weather/main';
 import SNComponent from './components/social network/components_container';
 import MComponent from './components/metronome/index';
 import BCComponent from './components/bank card/index';
@@ -42,9 +43,9 @@ function App() {
                     </Link>
                 </li>
                 <li className="menu-item">
-                    <a href="#menu">
-                           ___
-                    </a>
+                    <Link to='/react-project/weather'>
+                        Weather
+                    </Link>
                 </li>
                 <li className="menu-item">
                     <Link to='/react-project/social-network'>
@@ -79,8 +80,8 @@ function App() {
                 <Route path = '/react-project/background'>
                     <BGComponent />
                 </Route>
-                <Route path = '/react-project/background'>
-                    <BGComponent />
+                <Route path = '/react-project/weather'>
+                    <WComponent />
                 </Route>
                 <Route path = '/react-project/social-network'>
                     <SNComponent />
