@@ -20,7 +20,7 @@ export default class WComponent extends React.Component{
 
     componentDidMount(){
         axios.get(
-            "http://api.openweathermap.org/data/2.5/forecast?q=ilam&appid=59d9fa0cf6743e3b7d170bf7ba5ff223&units=metric"
+            "https://api.openweathermap.org/data/2.5/forecast?q=ilam&appid=59d9fa0cf674ne3b7d170bf7ba5ff223&units=metric"
         ).then(({data}) => {
             this.setState({weather_json:data})
         });
