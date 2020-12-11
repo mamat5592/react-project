@@ -42,9 +42,11 @@ export default class WComponent extends React.Component{
                     <SingleDay id = 'bigcard' />
                 </div>
                 <div id='mini_days_con'>
-                    {this.day_detail_fetch().map((item, index)=>(
-                        <DayInWeek key={index} day_name={item['day_name']} max_temp={item['max_temp']} min_temp={item['min_temp']}/>
-                    ))}
+                    <div id='inner_con'>
+                        {this.day_detail_fetch().map((item, index)=>(
+                            <DayInWeek key={index} day_name={item['day_name']} max_temp={item['max_temp']} min_temp={item['min_temp']}/>
+                        ))}
+                    </div>
                 </div>
             </div>
         );

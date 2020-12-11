@@ -23,6 +23,12 @@
     position: absolute;
     overflow: auto;
     bottom: 5vh;
+}
+
+#inner_con{
     display: flex;
+    width: fit-content;
+    justify-self: center;
+    align-items: center;
     margin: auto;
 }
