@@ -4,7 +4,6 @@ import './week_detail.css';
 
 export default class DayInWeek extends React.Component{
 
-
     render(){
         return(
             <div id='day_in_week'>
@@ -14,5 +13,4 @@ export default class DayInWeek extends React.Component{
             </div>
         );
     }
-    
 }

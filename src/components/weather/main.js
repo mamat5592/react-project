@@ -11,7 +11,8 @@ export default class WComponent extends React.Component{
         super(props);
 
         this.state = {
-            weather_json : {}
+            weather_json : {},
+            single_day_content : {}
         }
         this.day_detail_fetch = this.day_detail_fetch.bind(this);
         this.count_duplicate = this.count_duplicate.bind(this);
@@ -39,12 +40,19 @@ export default class WComponent extends React.Component{
         return(
             <div id='holder' >
                 <div>
-                    <SingleDay id = 'bigcard' />
+                    <SingleDay id = 'bigcard' object={this.state.single_day_content}/>
                 </div>
                 <div id='mini_days_con'>
                     <div id='inner_con'>
                         {this.day_detail_fetch().map((item, index)=>(
-                            <DayInWeek key={index} day_name={item['day_name']} max_temp={item['max_temp']} min_temp={item['min_temp']}/>
+                            <div key={index} onClick={()=>this.setState({single_day_content:this.single_day_detail_fetch(index)})}>
+                                <DayInWeek 
+                                day_name={item['day_name']} 
+                                max_temp={item['max_temp']} 
+                                min_temp={item['min_temp']} 
+                                />
+                            </div>
+                            
                         ))}
                     </div>
                 </div>
@@ -52,8 +60,37 @@ export default class WComponent extends React.Component{
         );
     }
 
-    single_day_detail_fetch(){
+    single_day_detail_fetch(index){
+        var arr = new Array(40);
+        var temp_arr = new Array(40);
 
+        var i;
+        for(i = 0 ;i < 40;i++){
+            arr[i] = this.state.weather_json.list[i];
+            temp_arr[i] = new Date(this.state.weather_json.list[i].dt_txt).getDate();
+        }
+
+        var number_of_every_day = this.count_duplicate(temp_arr);
+        var list_of_str_keys = Object.keys(number_of_every_day);
+        var list_of_int_keys = list_of_str_keys.map((e)=>parseInt(e));
+
+        var new_arr = [];
+        for(var i = 0 ;i < 40;i++){
+            if(list_of_int_keys[index] === temp_arr[i]){
+                new_arr.push(arr[i]);
+            }
+        }
+        
+        var obj = [];
+        new_arr.forEach(element => {
+            obj.push({
+                time:element.dt_txt.split(' ')[1],
+                max_temp:element.main.temp_max,
+                min_temp:element.main.temp_min,
+                icon:element.weather[0].description,
+            })
+        });
+        return obj;
     }
 
     day_detail_fetch(){
@@ -112,31 +149,31 @@ export default class WComponent extends React.Component{
                 obj[1].min_temp += this.state.weather_json.list[j].main.temp_min;
             }
             obj[1].max_temp = (obj[1].max_temp / number_of_every_day[list_of_int_keys[1]]).toFixed(1);
-            obj[1].min_temp = (obj[0].min_temp / number_of_every_day[list_of_int_keys[1]]).toFixed(1);
+            obj[1].min_temp = (obj[1].min_temp / number_of_every_day[list_of_int_keys[1]]).toFixed(1);
 
             for(i = 0 ;i < number_of_every_day[list_of_int_keys[2]];i++,j++){
                 obj[2].day_name = days[new Date(this.state.weather_json.list[j].dt_txt).getDay()];
                 obj[2].max_temp += this.state.weather_json.list[j].main.temp_max;
                 obj[2].min_temp += this.state.weather_json.list[j].main.temp_min;
             }
-            obj[2].max_temp = (obj[0].max_temp / number_of_every_day[list_of_int_keys[2]]).toFixed(1);
-            obj[2].min_temp = (obj[0].min_temp / number_of_every_day[list_of_int_keys[2]]).toFixed(1);
+            obj[2].max_temp = (obj[2].max_temp / number_of_every_day[list_of_int_keys[2]]).toFixed(1);
+            obj[2].min_temp = (obj[2].min_temp / number_of_every_day[list_of_int_keys[2]]).toFixed(1);
 
             for(i = 0 ;i < number_of_every_day[list_of_int_keys[3]];i++,j++){
                 obj[3].day_name = days[new Date(this.state.weather_json.list[j].dt_txt).getDay()];
                 obj[3].max_temp += this.state.weather_json.list[j].main.temp_max;
                 obj[3].min_temp += this.state.weather_json.list[j].main.temp_min;
             }
-            obj[3].max_temp = (obj[0].max_temp / number_of_every_day[list_of_int_keys[3]]).toFixed(1);
-            obj[3].min_temp = (obj[0].min_temp / number_of_every_day[list_of_int_keys[3]]).toFixed(1);
+            obj[3].max_temp = (obj[3].max_temp / number_of_every_day[list_of_int_keys[3]]).toFixed(1);
+            obj[3].min_temp = (obj[3].min_temp / number_of_every_day[list_of_int_keys[3]]).toFixed(1);
 
             for(i = 0 ;i < number_of_every_day[list_of_int_keys[4]];i++,j++){
                 obj[4].day_name = days[new Date(this.state.weather_json.list[j].dt_txt).getDay()];
                 obj[4].max_temp += this.state.weather_json.list[j].main.temp_max;
                 obj[4].min_temp += this.state.weather_json.list[j].main.temp_min;
             }
-            obj[4].max_temp = (obj[0].max_temp / number_of_every_day[list_of_int_keys[4]]).toFixed(1);
-            obj[4].min_temp = (obj[0].min_temp / number_of_every_day[list_of_int_keys[4]]).toFixed(1);
+            obj[4].max_temp = (obj[4].max_temp / number_of_every_day[list_of_int_keys[4]]).toFixed(1);
+            obj[4].min_temp = (obj[4].min_temp / number_of_every_day[list_of_int_keys[4]]).toFixed(1);
 
         }else{
             var obj =[
@@ -187,39 +224,39 @@ export default class WComponent extends React.Component{
                 obj[1].min_temp += this.state.weather_json.list[j].main.temp_min;
             }
             obj[1].max_temp = (obj[1].max_temp / number_of_every_day[list_of_int_keys[1]]).toFixed(1);
-            obj[1].min_temp = (obj[0].min_temp / number_of_every_day[list_of_int_keys[1]]).toFixed(1);
+            obj[1].min_temp = (obj[1].min_temp / number_of_every_day[list_of_int_keys[1]]).toFixed(1);
 
             for(i = 0 ;i < number_of_every_day[list_of_int_keys[2]];i++,j++){
                 obj[2].day_name = days[new Date(this.state.weather_json.list[j].dt_txt).getDay()];
                 obj[2].max_temp += this.state.weather_json.list[j].main.temp_max;
                 obj[2].min_temp += this.state.weather_json.list[j].main.temp_min;
             }
-            obj[2].max_temp = (obj[0].max_temp / number_of_every_day[list_of_int_keys[2]]).toFixed(1);
-            obj[2].min_temp = (obj[0].min_temp / number_of_every_day[list_of_int_keys[2]]).toFixed(1);
+            obj[2].max_temp = (obj[2].max_temp / number_of_every_day[list_of_int_keys[2]]).toFixed(1);
+            obj[2].min_temp = (obj[2].min_temp / number_of_every_day[list_of_int_keys[2]]).toFixed(1);
 
             for(i = 0 ;i < number_of_every_day[list_of_int_keys[3]];i++,j++){
                 obj[3].day_name = days[new Date(this.state.weather_json.list[j].dt_txt).getDay()];
                 obj[3].max_temp += this.state.weather_json.list[j].main.temp_max;
                 obj[3].min_temp += this.state.weather_json.list[j].main.temp_min;
             }
-            obj[3].max_temp = (obj[0].max_temp / number_of_every_day[list_of_int_keys[3]]).toFixed(1);
-            obj[3].min_temp = (obj[0].min_temp / number_of_every_day[list_of_int_keys[3]]).toFixed(1);
+            obj[3].max_temp = (obj[3].max_temp / number_of_every_day[list_of_int_keys[3]]).toFixed(1);
+            obj[3].min_temp = (obj[3].min_temp / number_of_every_day[list_of_int_keys[3]]).toFixed(1);
 
             for(i = 0 ;i < number_of_every_day[list_of_int_keys[4]];i++,j++){
                 obj[4].day_name = days[new Date(this.state.weather_json.list[j].dt_txt).getDay()];
                 obj[4].max_temp += this.state.weather_json.list[j].main.temp_max;
                 obj[4].min_temp += this.state.weather_json.list[j].main.temp_min;
             }
-            obj[4].max_temp = (obj[0].max_temp / number_of_every_day[list_of_int_keys[4]]).toFixed(1);
-            obj[4].min_temp = (obj[0].min_temp / number_of_every_day[list_of_int_keys[4]]).toFixed(1);
+            obj[4].max_temp = (obj[4].max_temp / number_of_every_day[list_of_int_keys[4]]).toFixed(1);
+            obj[4].min_temp = (obj[4].min_temp / number_of_every_day[list_of_int_keys[4]]).toFixed(1);
 
             for(i = 0 ;i < number_of_every_day[list_of_int_keys[5]];i++,j++){
                 obj[5].day_name = days[new Date(this.state.weather_json.list[j].dt_txt).getDay()];
                 obj[5].max_temp += this.state.weather_json.list[j].main.temp_max;
                 obj[5].min_temp += this.state.weather_json.list[j].main.temp_min;
             }
-            obj[5].max_temp = (obj[0].max_temp / number_of_every_day[list_of_int_keys[5]]).toFixed(1);
-            obj[5].min_temp = (obj[0].min_temp / number_of_every_day[list_of_int_keys[5]]).toFixed(1);
+            obj[5].max_temp = (obj[5].max_temp / number_of_every_day[list_of_int_keys[5]]).toFixed(1);
+            obj[5].min_temp = (obj[5].min_temp / number_of_every_day[list_of_int_keys[5]]).toFixed(1);
         }
         return obj;
     }

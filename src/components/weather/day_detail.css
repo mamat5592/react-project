@@ -1,0 +1,28 @@
+#top_div{
+    position: relative;
+    top: 15vh;
+    width: 325px;
+    height: 325px;
+    margin: auto;
+    box-shadow: 0px 0px 20px 0 #DDDDDD;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#houre_rec{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+#houre_rec p{
+    display: inline;
+    margin: 2px;
+}
+
+#ico{
+    width: 30px;
+    height: 30px;
+}
