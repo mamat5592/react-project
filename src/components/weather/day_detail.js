@@ -5,7 +5,7 @@ import icon from './media/wi-cloudy.svg';
 export default function SingleDay(props){
     if(!props.object.hasOwnProperty(0)){
         return(
-            <div><p>choose one</p></div>
+            <div className="houre_rec"><p>choose one</p></div>
         );
     }
     return(
@@ -21,7 +21,7 @@ function show(obj){
         if(i === tag.length -1 ){
             tag[i] = 
             <div key={i}>
-                <div id="houre_rec">
+                <div className="houre_rec">
                     <img src={icon} alt={obj[i].description} id="ico"/>
                     <p id="time">{obj[i].time}</p>
                     <p id="temp1">{obj[i].max_temp}&deg;</p>
@@ -32,7 +32,7 @@ function show(obj){
         }
         tag[i] = 
         <div key={i}>
-            <div id="houre_rec">
+            <div className="houre_rec">
                 <img src={icon} alt={obj[i].description} id="ico"/>
                 <p id="time">{obj[i].time}</p>
                 <p id="temp1">{obj[i].max_temp}&deg;</p>
