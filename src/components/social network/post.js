@@ -1,5 +1,7 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
+import { addComment } from './redux/actions'
 import PostAttachment from './attachments/post_attachment';
 import ImageAttachment from './attachments/image_attachment'
 import './post.css';
@@ -9,7 +11,7 @@ class Post extends React.Component{
         super(props);
 
         this.state = {
-            comments : this.props.comments,
+            comments:[],
             comment_number : this.props.comments.length,
             is_commented: false,
             retweet_number : this.props.retweet_number,
@@ -17,9 +19,6 @@ class Post extends React.Component{
             like_number : this.props.like_number,
             is_liked : false,
         }
-
-        this.add_comment = this.add_comment.bind(this);
-        this.insert_attachment = this.insert_attachment.bind(this)
     }
 
     render(){
@@ -44,9 +43,11 @@ class Post extends React.Component{
                 <hr style={{border:0,borderTop: '1px solid #DDDDDD',margin:0}} />
 
                 <div className='comments' ref={a=>comments = a}>
-                    {this.state.comments.map((item,index) => (
-                        <p key={index}>{item}</p>
-                    ))}
+                    {
+                    this.props.content.map((comment, index) => (
+                        <p key={index}>{comment}</p>
+                    ))
+                    }
                     <form onSubmit={(e)=>this.add_comment(e, b)} >
                         <input id='inp_field' type='text' ref={a=>b=a} minLength='2' required/>
                         <input id='inp_submit' type='submit' value='send' />
@@ -61,8 +62,13 @@ class Post extends React.Component{
                     title='comment' 
                     onClick={
                         ()=>{
-                            if(this.state.is_commented){comments.style = 'display:none';this.setState({is_commented:false})}
-                            else{comments.style = 'display:inline-block';this.setState({is_commented:true})}
+                            if(this.state.is_commented){
+                                comments.style = 'display:none';this.setState({is_commented:false})
+                            }
+                            else{
+                                comments.style = 'display:inline-block';
+                                this.setState({is_commented:true})
+                            }
                         }
                     }>
                         <div className="far fa-comment fa-lg" style={this.state.comment_number === 0?{color: 'gray'}:{color: '#339af0'}} />
@@ -106,7 +112,7 @@ class Post extends React.Component{
 
     add_comment(event, input_field){
         event.preventDefault();
-        this.setState({ comments: [...this.state.comments, input_field.value],comment_number:this.state.comment_number+1 })
+        this.props.addComment(input_field.value)
         input_field.value = '';
     }
 
@@ -133,4 +139,11 @@ Post.defaultProps = {
     like_number : 0
 }
 
-export default Post;
+const mapStateToProps = state => {
+    return state.add_comment;
+}
+
+export default connect(
+    mapStateToProps,
+    { addComment }
+)(Post);

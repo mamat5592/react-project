@@ -75,7 +75,7 @@ export default class WComponent extends React.Component{
         var list_of_int_keys = list_of_str_keys.map((e)=>parseInt(e));
 
         var new_arr = [];
-        for(var i = 0 ;i < 40;i++){
+        for(i = 0 ;i < 40;i++){
             if(list_of_int_keys[index] === temp_arr[i]){
                 new_arr.push(arr[i]);
             }
@@ -97,16 +97,20 @@ export default class WComponent extends React.Component{
 
         var arr = new Array(40);
         var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+        var i;
+        var j;
 
-        for(var i = 0 ;i < arr.length;i++){
+        for(i = 0 ;i < arr.length;i++){
             arr[i] = new Date(this.state.weather_json.list[i].dt_txt).getDate();
         }
         var number_of_every_day = this.count_duplicate(arr);
         var list_of_str_keys = Object.keys(number_of_every_day);
         var list_of_int_keys = list_of_str_keys.map((e)=>parseInt(e));
 
+        var obj;
+
         if(list_of_int_keys.length < 6){
-            var obj =[
+            obj =[
                 {
                     day_name: '',
                     max_temp: 0,
@@ -134,7 +138,7 @@ export default class WComponent extends React.Component{
                 }
             ]
             
-            var j = 0;
+            j = 0;
             for(i = 0 ;i < number_of_every_day[list_of_int_keys[0]];i++,j++){
                 obj[0].day_name = days[new Date(this.state.weather_json.list[j].dt_txt).getDay()];
                 obj[0].max_temp += this.state.weather_json.list[j].main.temp_max;
@@ -176,7 +180,7 @@ export default class WComponent extends React.Component{
             obj[4].min_temp = (obj[4].min_temp / number_of_every_day[list_of_int_keys[4]]).toFixed(1);
 
         }else{
-            var obj =[
+            obj =[
                 {
                     day_name: '',
                     max_temp: 0,
@@ -209,7 +213,7 @@ export default class WComponent extends React.Component{
                 }
             ]
             
-            var j = 0;
+            j = 0;
             for(i = 0 ;i < number_of_every_day[list_of_int_keys[0]];i++,j++){
                 obj[0].day_name = days[new Date(this.state.weather_json.list[j].dt_txt).getDay()];
                 obj[0].max_temp += this.state.weather_json.list[j].main.temp_max;
