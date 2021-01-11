@@ -29,6 +29,7 @@ const SNComponent = () => {
                     comments={['bah bah che post khargholadeii man in post shoma ro pasandidam va be hamin dalil an ra milikam','soltan post ha']}
                     retweet_number={47}
                     like_number={190}
+                    ind={1}
                 />
 
                 <Post 
@@ -38,6 +39,7 @@ const SNComponent = () => {
                     post_date='2020-12-05'
                     post_title='machine learning'
                     post_text={text}
+                    ind={2}
                 />
 
                 <Post 
@@ -50,6 +52,7 @@ const SNComponent = () => {
                     attachment_type='image'
                     attached_image={attached_image}
                     like_number={2727527}
+                    ind={3}
                 />
             </div>
         </Provider>

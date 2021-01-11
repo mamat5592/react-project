@@ -1,9 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import { addComment } from './redux/actions'
+import { addComment } from './redux/actions';
 import PostAttachment from './attachments/post_attachment';
-import ImageAttachment from './attachments/image_attachment'
+import ImageAttachment from './attachments/image_attachment';
 import './post.css';
 
 class Post extends React.Component{
@@ -12,7 +12,7 @@ class Post extends React.Component{
 
         this.state = {
             comments:[],
-            comment_number : this.props.comments.length,
+            comment_number : this.props.content.length,
             is_commented: false,
             retweet_number : this.props.retweet_number,
             is_retweeted : false,
@@ -44,9 +44,9 @@ class Post extends React.Component{
 
                 <div className='comments' ref={a=>comments = a}>
                     {
-                    this.props.content.map((comment, index) => (
-                        <p key={index}>{comment}</p>
-                    ))
+                    // this.props.content.map((comment, index) => (
+                    //     <p key={index}>{comment}</p>
+                    // ))
                     }
                     <form onSubmit={(e)=>this.add_comment(e, b)} >
                         <input id='inp_field' type='text' ref={a=>b=a} minLength='2' required/>
@@ -112,7 +112,7 @@ class Post extends React.Component{
 
     add_comment(event, input_field){
         event.preventDefault();
-        this.props.addComment(input_field.value)
+        this.props.addComment(input_field.value, this.props.ind)
         input_field.value = '';
     }
 

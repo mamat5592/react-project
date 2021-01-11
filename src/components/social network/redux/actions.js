@@ -1,4 +1,7 @@
-export const addComment = text => ({
+export const addComment = (text, key) => ({
     type : 'ADD_COMMENT',
-    payload : text
+    payload : {
+        text: text,
+        key: key
+    }
 })
